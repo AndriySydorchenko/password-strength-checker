@@ -10,9 +10,9 @@ import {getStrength} from "@/app/components/PasswordField/utils";
 const PasswordField: React.FC = () => {
     const {password, showPassword, setPassword, togglePasswordVisibility} = usePasswordField()
     const strength = getStrength(password);
-    
+
     return (
-        <Box className="max-w-md mx-auto mt-20 p-4 shadow-lg rounded-lg bg-white">
+        <Box className="max-w-md mx-auto mt-10 p-4 shadow-lg rounded-lg bg-white">
             <FormControl sx={{m: 1, width: '25ch'}} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Enter Password</InputLabel>
                 <OutlinedInput
@@ -33,8 +33,8 @@ const PasswordField: React.FC = () => {
                     }
 
                 />
+                <StrengthSections strength={strength}/>
             </FormControl>
-            <StrengthSections strength={strength}/>
             <StrengthExplanation strength={strength}/>
         </Box>
     );
